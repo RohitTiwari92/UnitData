@@ -8,16 +8,16 @@ with the help of unitdata you can create a dummy database on your local db conne
 what you can do with unitdata:
 1. create database 
 2. create tables in created data 
-3. create functions,sps
+3. create functions, PS
 4. seed tables with data in xml format
-5. create setup (by running this tool on actual db, it will give "create table query"  and "data in xml files" for given table (in xml file we will have table rows data))
+5. create setup (by running this tool on actual db, it will give "create table query” and "data in xml files" for given table (in xml file we will have table rows data))
 6. execute any query on db 
 
 setup the unitdata:
 
 1. clone this repo to your local and include in your solution.
-2. Attached the refrence of this project to your testing project.
-3. in app/web config of yor project add local db with key : "TEST"
+2. Attached the reference of this project to your testing project.
+3. in app/web config of your project add local db with key: "TEST"
 	eg: 
   <connectionStrings>
     <add name="Test" connectionString="Data Source=(LocalDb)\MSSQLLocalDB;Initial Catalog=master;Integrated Security=True" providerName="System.Data.SqlClient" />
@@ -48,3 +48,6 @@ setup the unitdata:
 
 	
 after this setup you can use your localdb connection string as real connection string for your tests.
+
+
+* don't go for design and architecture of this project ill update this soon.  
