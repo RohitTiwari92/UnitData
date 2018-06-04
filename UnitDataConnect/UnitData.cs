@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using UnitDataConnect.XMLGenerator;
 
 namespace UnitDataConnect
 {
@@ -20,10 +21,10 @@ namespace UnitDataConnect
             Createdatabase cdb=new Createdatabase(schemaFilePath, connectionString);
             cdb.Create(location, dbname);
        }
-        public static void SeedTable(string dbName, string tableName, string seedFilePath, string connectionString)
+        public static void SeedTable(string dbName, string tableName, string seedFilePath, string connectionString, int datetymetype = 105)
         {
            SeedTables sdt=new SeedTables();
-            sdt.SeedTable(dbName, tableName, seedFilePath, connectionString);
+            sdt.SeedTable(dbName, tableName, seedFilePath, connectionString, datetymetype);
         }
 
         public static void DeleteDb(string dbName, string connectionString)
@@ -36,6 +37,12 @@ namespace UnitDataConnect
         {
             GeneralQueryRunner ddb = new GeneralQueryRunner(query, connectionString);
             ddb.Run();
+        }
+
+        public static void DataSetup(string dbname, string dirpath, string connectionstring, string prefix = "")
+        {
+            Setupdata ddb = new Setupdata();
+            ddb.Setup(dbname,dirpath,connectionstring,prefix);
         }
     }
 }
