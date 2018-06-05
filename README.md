@@ -19,10 +19,11 @@ setup the unitdata:
 2. Attached the reference of this project to your testing project.
 3. in app/web config of your project add local db with key: "TEST"
 	eg: 
+```xml
   <connectionStrings>
     <add name="Test" connectionString="Data Source=(LocalDb)\MSSQLLocalDB;Initial Catalog=master;Integrated Security=True" providerName="System.Data.SqlClient" />
   </connectionStrings>
-  
+```
 4. setup the data with helper method 
 	-  to setup the data for testing use "UnitData.DataSetup(dbname, dirpath, connectionstring, prefix)"
 	- where dbname is your database name.
