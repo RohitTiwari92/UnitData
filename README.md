@@ -25,26 +25,25 @@ setup the unitdata:
   
 4. setup the data with helper method 
 	-  to setup the data for testing use "UnitData.DataSetup(dbname, dirpath, connectionstring, prefix)"
-	where 
-	dbname is your database name.
-	dirpath is where you want to dump your xml and sql files.
-	connectionString is your actual database connection string.  this tool only read your data its not doing (insert,update,delete) in your actual database.
-	prefix if you want some type of prefix on your sql and xml file name.
+	- where dbname is your database name.
+	- dirpath is where you want to dump your xml and sql files.
+	- connectionString is your actual database connection string.  this tool only read your data its not doing    - (insert,update,delete) in your actual database.
+	- prefix if you want some type of prefix on your sql and xml file name.
 	
 5. create database 
-	To create database you have to call "UnitData.CreatDatabase(schemaFilePath, connectionString, location, dbname);"
-	schemaFilePath - this file contains whatever you want to insert in your newly created database.
-	connectionString - connection String of your local db 
-	location - where you want to setup db phycically (.mdf,.ldf files)
-	dbname - name of the db you want to create
+	- To create database you have to call "UnitData.CreatDatabase(schemaFilePath, connectionString, location, dbname);"
+	- schemaFilePath - this file contains whatever you want to insert in your newly created database.
+	- connectionString - connection String of your local db 
+	- location - where you want to setup db phycically (.mdf,.ldf files)
+	- dbname - name of the db you want to create
 	
 6. seed table
-	To seed the tables you need to call " UnitData.SeedTable(dbName,tableName,seedFilePath,connectionString,datetymetype)"
-	dbname is your database name.
-	tableName is table name in which you want to seed data.
-	seedFilePath  file path from which you want to seed.
-	connectionString - connection String of your local db 
-	datetymetype : its a style of your datatime ref: https://www.w3schools.com/sql/func_sqlserver_convert.asp
+	- To seed the tables you need to call " UnitData.SeedTable(dbName,tableName,seedFilePath,connectionString,datetymetype)"
+	- dbname is your database name.
+	- tableName is table name in which you want to seed data.
+	- seedFilePath  file path from which you want to seed.
+	- connectionString - connection String of your local db 
+	- datetymetype : its a style of your datatime ref: https://www.w3schools.com/sql/func_sqlserver_convert.asp
 
 	
 after this setup you can use your localdb connection string as real connection string for your tests.
