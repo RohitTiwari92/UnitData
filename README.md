@@ -46,6 +46,10 @@ setup the unitdata:
 	- connectionString - connection String of your local db 
 	- datetymetype : its a style of your datatime ref: https://www.w3schools.com/sql/func_sqlserver_convert.asp
 
+7. Delete Database
+	- to delete the database you need to call "DeleteDb( dbName,  connectionString)"
+	- dbname is your database name.
+	- connectionString - connection String of your local db 
 	
 after this setup you can use your localdb connection string as real connection string for your tests.
 
