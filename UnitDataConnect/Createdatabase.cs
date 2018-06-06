@@ -1,12 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
-using System.Data.SqlServerCe;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 
 namespace UnitDataConnect
@@ -27,7 +23,9 @@ namespace UnitDataConnect
         public void Create(string location, string dbname)
         {
             createDatabase(location, dbname);
-            using (SqlConnection connection = new SqlConnection(_connectionstring))
+            SqlConnectionStringBuilder builder=new SqlConnectionStringBuilder(_connectionstring);
+            builder.InitialCatalog = dbname;
+            using (SqlConnection connection = new SqlConnection(builder.ConnectionString))
             {
                 
                 SqlCommand cmd = new SqlCommand();
