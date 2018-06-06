@@ -11,7 +11,7 @@ namespace UnitDataConnect.XMLGenerator
       public void Setup(string dbname, string dirpath, string connectionstring, string prefix = "")
       {
           GetalltheTable tableobj=new GetalltheTable();
-          List<string> tablesList = tableobj.GettableList(connectionstring);
+          List<string> tablesList = tableobj.GettableList(connectionstring,dbname);
             Createtable ct = new Createtable();
             ct.Write(dbname,  dirpath, connectionstring, prefix);
             foreach (var table in tablesList)

@@ -6,8 +6,11 @@ namespace UnitDataConnect.XMLGenerator
 {
  public   class GetalltheTable
     {
-        public List<string> GettableList(string conString)
+        public List<string> GettableList(string conString,string dbname)
         {
+            SqlConnectionStringBuilder builder = new SqlConnectionStringBuilder(conString);
+            builder.InitialCatalog = dbname;
+            conString = builder.ConnectionString;
             List<string> list = new List<string>();
 
             // Open connection to the database
@@ -19,7 +22,7 @@ namespace UnitDataConnect.XMLGenerator
 
                 // Set up a command with the given query and associate
                 // this with the current connection.
-                using (SqlCommand cmd = new SqlCommand("SELECT name from sys.databases", con))
+                using (SqlCommand cmd = new SqlCommand("use"+dbname+";SELECT name from sys.databases", con))
                 {
                     //List<string> tables = new List<string>();
                     DataTable dt = con.GetSchema("Tables");
