@@ -1,7 +1,7 @@
 # UnitData
 
 
-unit data made for unit/Integration testing.
+Unitdata made for unit/Integration testing.
 with the help of unitdata you can create a dummy database on your local db connection.
 
 
